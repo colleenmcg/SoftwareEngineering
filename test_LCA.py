@@ -75,6 +75,8 @@ def test_LCA_find_path() :
 
 def test_LCA_find_LCA() :
 
+#inserting values into tree.
+
     root = Node(1)
     root.left = Node(2)
     root.right = Node(3)
@@ -89,6 +91,7 @@ def test_LCA_find_LCA() :
     assert LCA.findLCA(root, 11, 17) == -1
 
 # Function outputs the LCA of 2 nodes present in the tree.
+
     assert  LCA.findLCA(root,2,3) == 1
 
     assert  LCA.findLCA(root,4,5) == 2
