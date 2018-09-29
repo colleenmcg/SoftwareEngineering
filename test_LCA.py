@@ -43,12 +43,11 @@ def test_LCA_find_path() :
     assert LCA.findPath(root,path,0) == False
 
 
-def test_LCA_Initial() :
+def test_LCA_find_LCA() :
+    root = Node(7)
+    assert LCA.findLCA(root, 11, 17) == -1
     assert  LCA.findLCA(LCA.root,2,3) == 1
     assert  LCA.findLCA(LCA.root,4,5) == 2
     assert  LCA.findLCA(LCA.root,4,6) == 1
     assert  LCA.findLCA(LCA.root,3,4) == 1
     assert  LCA.findLCA(LCA.root,2,4) == 2
-
-def test_LCA_Root() :
-    assert LCA.findLCA(LCA.root,-1,4) == -1
