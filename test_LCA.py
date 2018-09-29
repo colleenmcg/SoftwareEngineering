@@ -1,4 +1,15 @@
 import LCA
+import pytest
+from LCA import Node
+
+
+def test_LCA_initialize() :
+    x = Node(1);
+    assert x.key == 4
+
+def test_LCA_no_values() :
+    with pytest.raises(Exception) as e_info:
+        y = Node(9)
 
 def test_LCA_Initial() :
     assert  LCA.findLCA(LCA.root,2,3) == 1
