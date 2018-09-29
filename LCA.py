@@ -8,7 +8,7 @@ class Node:
 
 # Finds the path from root node to given node
 # Stores path in  path[],
-# returns true if path is there else returnsfalse
+# returns true if path is there else returns false
 def findPath( root, path, x):
 
     if root is None:
@@ -24,7 +24,7 @@ def findPath( root, path, x):
     # Checking if x is found in left or right sub-tree
     if ((root.left != None and findPath(root.left, path, x)) or
             (root.right!= None and findPath(root.right, path, x))):
-        return True
+        return path
 
     # If x is not in subtree, return False
 
