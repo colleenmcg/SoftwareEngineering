@@ -76,13 +76,13 @@ def test_LCA_find_LCA() :
 
 #inserting values into tree.
 
-    root = Node(1)
+    root = Node(9)
     root.left = Node(2)
-    root.right = Node(3)
-    root.left.left = Node(4)
-    root.left.right = Node(5)
-    root.right.left = Node(6)
-    root.right.right = Node(7)
+    root.right = Node(1)
+    root.left.left = Node(8)
+    root.left.right = Node(7)
+    root.right.left = Node(4)
+    root.right.right = Node(3)
 
 # Function outputs -1 if we try to find the LCA of
 # 2 nodes and one or both nodes are not in the tree.
@@ -91,12 +91,12 @@ def test_LCA_find_LCA() :
 
 # Function outputs the LCA of 2 nodes present in the tree.
 
-    assert  LCA.findLCA(root,2,3) == 1
+    assert  LCA.findLCA(root,2,1) == 9
 
-    assert  LCA.findLCA(root,4,5) == 2
+    assert  LCA.findLCA(root,8,7) == 2
 
-    assert  LCA.findLCA(root,4,6) == 1
+    assert  LCA.findLCA(root,8,3) == 9
 
-    assert  LCA.findLCA(root,3,4) == 1
+    assert  LCA.findLCA(root,4,3) == 1
 
-    assert  LCA.findLCA(root,2,4) == 2
+    assert  LCA.findLCA(root,1,3) == 1
