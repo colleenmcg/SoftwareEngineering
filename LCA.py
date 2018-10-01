@@ -1,3 +1,5 @@
+import LCA
+
 # A binary tree node
 class Node:
     # Constructor
