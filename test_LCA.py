@@ -32,8 +32,7 @@ def test_LCA_find_path() :
 # Function should output a False statement if
 # we dont input a root Node.
 
-    root = Node(None)
-    assert LCA.findPath(root,path,2) == False
+    assert LCA.findPath(None,path,2) == False
 
 # Function outputs the path if we have
 # a one node tree that matches the key we are looking for.
