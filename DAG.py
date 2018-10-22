@@ -1,4 +1,7 @@
 from collections import deque
+import array as arr
+import collections
+
 
 class GRAPH(object):
 
@@ -26,4 +29,21 @@ class GRAPH(object):
 
     graph[src_node].append(dest_node)  # create an edge between source and destination node.
 
-#def LCA(src_node, dest_node):   #find LCA in DAG
+
+  def bfs(self, src_node, dest_node, graph=None):
+    graph = self.graph
+
+    visited = set([src_node])
+    queue = collections.deque([src_node])
+    while queue:
+            vertex = queue.popleft()
+            for node in graph[vertex]:
+                    if node not in visited:
+                        visited.add(node)
+                        queue.append(node)
+
+                        if node == dest_node:
+                            queue=None
+                            return visited
+
+
