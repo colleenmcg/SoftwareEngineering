@@ -38,6 +38,19 @@ def test_DAG_add_edge() :
     assert Graph.add_edge('E', 'D') == False # function should return false if both source and destination node are not present in graph.
 
 
-#def test_DAG_LCA() :
-
-# testing LCA function
+def test_DAG_BFS() :
+    
+    Graph.add_node('D') #adding node
+    Graph.add_node('E') #adding node
+    Graph.add_node('F') #adding node
+    
+    Graph.add_edge('C', 'D')
+    Graph.add_edge('B', 'D')
+    Graph.add_edge('C', 'E')
+    Graph.add_edge('D', 'F')
+    
+  
+    assert  Graph.bfs('A', 'C') == {'A','B','C'}
+    assert  Graph.bfs('A', 'D') == {'A','B','C','D'}
+    assert  Graph.bfs('A', 'E') == {'A','B','C','D','E'}
+    assert  Graph.bfs('A', 'F') == {'A','B','C','D','E','F'}
