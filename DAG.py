@@ -36,8 +36,8 @@ class GRAPH(object):
 
       queue = [(src_node, [src_node])] # creates a queue that contains source node and path from source node
       while queue:  #while queue is not empty
-          (vertex, path) = queue.pop(0)   # pop of most recent node that was added to queue
-                for next in graph[vertex]:
+        (vertex, path) = queue.pop(0)   # pop of most recent node that was added to queue
+        for next in graph[vertex]:
                     if next == dest_node:   # if next node in graph == dest node
                         yield path + [next] # return the path
                     else:
