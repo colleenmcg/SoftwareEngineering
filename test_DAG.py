@@ -44,17 +44,41 @@ def test_DAG_BFS() :
     Graph.add_node('E') #adding node
     Graph.add_node('F') #adding node
     Graph.add_node('G') #adding node
+    Graph.add_node('H') #adding node
+    Graph.add_node('I') #adding node
     
-    Graph.add_edge('A', 'E') #adding edge
-    Graph.add_edge('B', 'E') #adding edge
-    Graph.add_edge('B', 'D') #adding edge
-    Graph.add_edge('E', 'D') #adding edge
-    Graph.add_edge('C', 'F') #adding edge
-    Graph.add_edge('C', 'G') #adding edge
+    Graph.add_edge('B', 'H') #adding edge
+    Graph.add_edge('C', 'I') #adding edge
+    Graph.add_edge('D', 'H') #adding edge
+    Graph.add_edge('D', 'I') #adding edge
+    Graph.add_edge('D', 'E') #adding edge
+    Graph.add_edge('E', 'F') #adding edge
+    Graph.add_edge('E', 'G') #adding edge
+    Graph.add_edge('F', 'H') #adding edge
+    Graph.add_edge('G', 'I') #adding edge
 
     
   
     assert  list(Graph.bfs('A', 'C')) == [['A','C']]
-    assert  list(Graph.bfs('A', 'D')) == [['A','B','D'],['A','E','D'],['A','B','E','D']]
-    assert  list(Graph.bfs('A', 'E')) == [['A','E'],['A','B','E']]
-    assert  list(Graph.bfs('A', 'F')) == [['A','C','F']]
+    assert  list(Graph.bfs('D', 'H')) == [['D','H'],['D','E','F','H']]
+    assert  list(Graph.bfs('A', 'H')) == [['A','B','H']]
+
+
+
+
+def test_to_Flat_List() :
+    temp = list(Graph.bfs('D', 'H'))
+    assert list(Graph.toFlatList(temp)) == ['D','H','D','E','F','H']
+
+def test_common_Ancestor() :
+    
+    assert list(Graph.commonAncestor([['A','E'],['A','B','E','F']],[['A','C','F']])) == ['F']
+
+
+def test_LCA() :
+
+    assert list(Graph.LCA('D','F','G')) == ['E']
+    assert list(Graph.LCA('A','H','I')) == ['A']
+    assert list(Graph.LCA('D','H','I')) == ['E']
+
+
