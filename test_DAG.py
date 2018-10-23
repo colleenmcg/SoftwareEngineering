@@ -43,14 +43,18 @@ def test_DAG_BFS() :
     Graph.add_node('D') #adding node
     Graph.add_node('E') #adding node
     Graph.add_node('F') #adding node
+    Graph.add_node('G') #adding node
     
-    Graph.add_edge('C', 'D')
-    Graph.add_edge('B', 'D')
-    Graph.add_edge('C', 'E')
-    Graph.add_edge('D', 'F')
+    Graph.add_edge('A', 'E') #adding edge
+    Graph.add_edge('B', 'E') #adding edge
+    Graph.add_edge('B', 'D') #adding edge
+    Graph.add_edge('E', 'D') #adding edge
+    Graph.add_edge('C', 'F') #adding edge
+    Graph.add_edge('C', 'G') #adding edge
+
     
   
-    assert  Graph.bfs('A', 'C') == {'A','B','C'}
-    assert  Graph.bfs('A', 'D') == {'A','B','C','D'}
-    assert  Graph.bfs('A', 'E') == {'A','B','C','D','E'}
-    assert  Graph.bfs('A', 'F') == {'A','B','C','D','E','F'}
+    assert  list(Graph.bfs('A', 'C')) == [['A','C']]
+    assert  list(Graph.bfs('A', 'D')) == [['A','B','D'],['A','E','D'],['A','B','E','D']]
+    assert  list(Graph.bfs('A', 'E')) == [['A','E'],['A','B','E']]
+    assert  list(Graph.bfs('A', 'F')) == [['A','C','F']]
