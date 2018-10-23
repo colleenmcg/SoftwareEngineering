@@ -30,20 +30,15 @@ class GRAPH(object):
     graph[src_node].append(dest_node)  # create an edge between source and destination node.
 
 
-  def bfs(self, src_node, dest_node, graph=None):
-    graph = self.graph
 
-    visited = set([src_node])
-    queue = collections.deque([src_node])
-    while queue:
-            vertex = queue.popleft()
-            for node in graph[vertex]:
-                    if node not in visited:
-                        visited.add(node)
-                        queue.append(node)
+  def bfs(self, src_node, dest_node, graph=None):  # bfs is returning all paths from root to dest node
+      graph = self.graph  #create graph
 
-                        if node == dest_node:
-                            queue=None
-                            return visited
-
-
+      queue = [(src_node, [src_node])] # creates a queue that contains source node and path from source node
+      while queue:  #while queue is not empty
+          (vertex, path) = queue.pop(0)   # pop of most recent node that was added to queue
+                for next in graph[vertex]:
+                    if next == dest_node:   # if next node in graph == dest node
+                        yield path + [next] # return the path
+                    else:
+                        queue.append((next, path + [next])) # append the next node onto the queue
