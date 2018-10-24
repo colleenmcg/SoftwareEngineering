@@ -1,3 +1,5 @@
+#Colleen McGloin SN: 16325155
+
 from collections import deque
 import array as arr
 import collections
@@ -50,7 +52,7 @@ class GRAPH(object):
         return flat_list
 
 
-    def commonAncestor(self, xList, yList): #calculates the LCA between 2 Lists
+    def commonAncestor(self, xList, yList): # calculates the LCA between 2 Lists
         x_Ancest = GRAPH.toFlatList(self, xList) # converts x list to one list
         y_Ancest = GRAPH.toFlatList(self, yList) # converts x list to one list
     
@@ -62,7 +64,7 @@ class GRAPH(object):
 
 
 
-    def LCA(self,root,x,y): #calls relevant functions and then returns the LCA of 2 nodes
+    def LCA(self,root,x,y): # calls relevant functions and then returns the LCA of 2 nodes
         xList = GRAPH.bfs(self,root,x)
         yList = GRAPH.bfs(self,root,y)
         LCA = GRAPH.commonAncestor(self, xList, yList)
