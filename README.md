@@ -13,3 +13,6 @@ Assignment 2 - Enhanced LCA solution:
 
 Assignment 3 - Biography:
 1. Betty Holberton.pdf => pdf of Biography
+
+Assignment 4 - Interrogating GitHub API:
+1. GitHubAPI.py => A program that allows a user to chose any github user and subsequently display a bar chart that shows how many of the github user's repos are coded in the top 7 programming languages. I used the PyGithub library to interrogate the GitHub API
