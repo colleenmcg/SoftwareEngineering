@@ -1,3 +1,13 @@
+
+# This python code gathers specific information on a given user and I then display it in a D3 graph, specifically a force collapsible graph.
+# The GitHub user account I have chosen to gather info on is "NYCSwan".
+# The graph displays all NYCSwan's followers. You are then able to see all the repos of each follower. You can then click on each repo and it will
+# display all the files in each repo.
+
+
+
+
+
 from github import Github
 from github import GithubException
 import matplotlib.pyplot as plt
