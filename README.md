@@ -19,3 +19,6 @@ Assignment 4 - Interrogating GitHub API:
 
 Assignment 5 - Measuring Engineering Report:
 1. Report Final.pdf => Report on Measuring an Engineer.
+
+Assignment 6 - GitHub Social Graph:
+1. GitHubGraph Folder => Contains all relevant files for Social Graph Assignment. Readme for this assignment is in the Folder.
